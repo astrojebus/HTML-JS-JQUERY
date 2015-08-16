@@ -1,0 +1,67 @@
+<html>
+<head>
+<title> Usando formulario y javascript</title>
+<script language='javascript'>
+function producto(){
+var a,b;
+a=document.frm1.txta.value;
+b=document.frm1.txtb.value;
+document.frm1.txtc.value=a*b;
+}
+
+function cociente(a,b){
+var c;
+c=a/b;
+document.frm1.txtc.value=c;
+}
+
+
+</script>
+
+</head>
+<body>
+<h3> Operaciones fundamentales</h3>
+<!--esto es un comentario -->
+
+<FORM name='frm1'>
+
+<TABLE BORDER=0>
+<TR>
+	<TD>Ingrese un entero</TD>
+	<TD>
+	<INPUT type='text' name="txta" value='0'>
+	</TD>
+</TR>
+
+<TR>
+	<TD>Ingrese otro entero</TD>
+	<TD>
+	<INPUT type='text' name="txtb" value='0'>
+	</TD>
+</TR>
+
+<TR>
+	<TD>El producto es:</TD>
+	<TD>
+	<INPUT type='text' name="txtc" readonly value='0'>
+	</TD>
+</TR>
+
+<TR>
+	<TD><INPUT type='Button' name="Producto" value='Producto' onclick='producto()'/></TD>
+	<TD>
+	<INPUT type='Reset' name="Limpiar" value='Limpiar'/>
+	</TD>
+</TR>
+<TR>
+	<TD><INPUT type='Button' name="cocientse" value='cociente' onclick='cociente(document.frm1.txta.value,document.frm1.txtb.value)'/></TD>
+	<TD>
+	<INPUT type='Button' name="Limpiar" value='Resta'/>
+	</TD>
+</TR>
+
+</TABLE>
+</FORM>
+
+</body>
+<html>

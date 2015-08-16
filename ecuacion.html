@@ -1,0 +1,87 @@
+<html>
+<head>
+<title> Ecuacion</title>
+<script language='javascript'>
+function resolver(){
+var a,b,c,x1,raiz,x2;
+a=document.frm1.txta.value;
+b=document.frm1.txtb.value;
+c=document.frm1.txtc.value;
+
+raiz=Math.sqrt((b*b)-(4*a*c));
+
+if (a==0){
+document.frm1.txtx1.value="no puede ser 0	";
+document.frm1.txtx2.value="no puede ser 0";
+}
+
+
+if ((a!=0)&& (raiz>=0)){
+x1=(-b-raiz)/(2*a);
+x2=(-b+raiz)/(2*a);
+
+document.frm1.txtx1.value=x1;
+document.frm1.txtx2.value=x2;
+}else
+
+document.frm1.txtx1.value="raices imaginarias	";
+document.frm1.txtx2.value="raices imaginarias";
+
+
+
+
+
+}
+
+
+
+
+</script>
+
+</head>
+<body>
+<h3> Operaciones fundamentales</h3>
+<!--esto es un comentario -->
+
+<FORM name='frm1'>
+
+<TABLE BORDER=0>
+<TR>
+	<TD>Ingrese a:</TD>
+	<TD>
+	<INPUT type='text' name="txta" value='0'>
+	</TD>
+</TR>
+
+<TR>
+	<TD>Ingrese b:</TD>
+	<TD>
+	<INPUT type='text' name="txtb" value='0'>
+	</TD>
+</TR>
+
+<TR>
+	<TD>Ingrese c:</TD>
+	<TD>
+	<INPUT type='text' name="txtc" value='0'>
+	</TD>
+</TR>
+
+<TR>
+	<TD><INPUT type='Button' name="Resolver" value='Resolver' onclick='resolver()'/></TD>
+	<TD>
+	<INPUT type='Reset' name="Limpiar" value='Limpiar'/>
+	</TD>
+</TR>
+<TR>
+	<TD><INPUT type='text' name="txtx1" readonly value='0'></TD>
+	<TD>
+	<INPUT type='text' name="txtx2" readonly value='0'>
+	</TD>
+</TR>
+
+</TABLE>
+</FORM>
+
+</body>
+<html>

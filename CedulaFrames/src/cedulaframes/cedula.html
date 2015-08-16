@@ -1,0 +1,87 @@
+<html>
+<head>
+<title> Digito Verificador</title>
+<script language="JavaScript">
+    //Función que permite solo Números
+function ValidaSoloNumeros() {
+ //if ((event.keyCode < 48) || (event.keyCode > 57))
+  alert("solo numeros");
+}
+function verificar()
+{
+    
+  var cedula = document.frm1.txtcedula.value;
+  if (isNaN(cedula)) {
+alert("Error:\nEste campo debe tener solo numeros.");
+frm1.txtcedula.focus();
+return false;
+ }
+  array = cedula.split( "" ); //
+  num = array.length;
+  if ( num == 10 )
+  {
+    total = 0;
+    digito = (array[9]*1);
+    for( i=0; i < (num-1); i++ )
+    {
+      mult = 0;
+      if ( ( i%2 ) != 0 ) {
+        total = total + ( array[i] * 1 );
+      }
+      else
+      {
+        mult = array[i] * 2;
+        if ( mult > 9 )
+          total = total + ( mult - 9 );
+        else
+          total = total + mult;
+      }
+    }
+    decena = total / 10;
+    decena = Math.floor( decena );
+    decena = ( decena + 1 ) * 10;
+    final = ( decena - total );
+    if ( ( final == 10 && digito == 0 ) || ( final == digito ) ) {
+      document.frm1.txtcedula.value="La cedula es correcta";
+      return true;
+    }
+    else
+    {
+      document.frm1.txtcedula.value="Cedula incorrecta";
+      return false;
+    }
+    
+    
+  
+  }
+  else
+  {
+    document.frm1.txtcedula.value="La cedula debe tener 10 digitos";
+    return false;
+  }
+}
+</script>
+
+<FORM name='frm1'>
+
+<TABLE BORDER=0>
+<TR>
+	<TD>Ingrese la cedula:</TD>
+	<TD>
+	<INPUT type='text' name="txtcedula" value=''>
+	</TD>
+</TR>
+
+
+<TR>
+	<TD><INPUT type='Button' name="Verificar" value='Verificar'  onchange='ValidaSoloNumeros()'  onclick='verificar()'/></TD>
+	<TD>
+	<INPUT type='Reset' name="Limpiar" value='Limpiar'/>
+	</TD>
+</TR>
+
+
+</TABLE>
+</FORM>
+
+</html>

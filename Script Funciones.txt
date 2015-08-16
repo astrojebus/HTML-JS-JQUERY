@@ -1,0 +1,40 @@
+<html>
+<head>
+<title> Ejemplo de funciones</title>
+<script language='javascript'>
+
+var i,a;
+a=prompt("Ingresa la tabla","0");
+
+function producto (a,b)
+{
+return (a*b);
+}
+function division (a,b)
+{
+return (a/b);
+}
+function suma (a,b)
+{
+return (a+b);
+}
+function resta (a,b)
+{
+return (a-b);
+}
+
+var num1,num2;
+num1=prompt("Ingresa un entero","8");
+num2=prompt("Ingresa un entero","2");
+document.write(" <br/>El producto es: " +producto(num,num2);
+document.write(" <br/>Division es: " +division(num,num2);
+document.write(" <br/>La suma es: " +suma(num,num2);
+document.write(" <br/>La resta es: " +resta(num,num2);
+
+</script>
+</head>
+<body>
+<h2> Segundo script </h2>
+
+</body>
+</html>

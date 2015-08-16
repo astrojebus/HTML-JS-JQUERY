@@ -1,0 +1,65 @@
+<html>
+<head>
+<title> Usando formulario y javascript</title>
+<script type="text/javascript" src="jquery-2.0.3.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#btncalcular").click(function(event){
+var a=$("#txta").val();
+var b=$("#txtb").val();
+var c=parseInt(a)+parseInt(b);
+$("#txtc").val(c);
+
+}
+
+);
+}
+);
+
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+$("#btnproducto").click(function(event){
+var a=$("#txta").val();
+var b=$("#txtb").val();
+var c=parseInt(a)*parseInt(b);
+$("#txtc").val(c);
+
+}
+
+);
+}
+);
+
+</script>
+
+</head>
+<body>
+	<form name='frm1'>
+		<table>
+		<tr>
+		<td> Ingrese un entero </td>
+			<td> <Input type='text' id='txta' value='0' /></td>
+		</tr>
+		<tr>
+		<td> Ingrese otro entero </td>
+			<td> <Input type='text' id='txtb' value='0' /></td>
+		</tr>
+		<tr>
+		<td> Resultado</td>
+			<td> <Input type='text' id='txtc' value='0' /></td>
+		</tr>
+		
+		<tr>
+		<td> <INPUT type='Button' id="btnproducto" value='Producto'/></td>
+			<td> <INPUT type='Button' id="btncalcular" value='Calcular'/></td>
+		</tr>
+		<tr>
+		<td> Resultado </td>
+			<td><INPUT type='Reset' id="Limpiar" value='Limpiar'/></td>
+		</tr>
+		</table>
+		</form>
+		</body>
+</html>

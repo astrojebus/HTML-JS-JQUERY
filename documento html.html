@@ -1,0 +1,58 @@
+<html>
+<meta charset="utf-8"/>
+<head><title>Ejemplo de tabla sencilla</title>
+<script type="text/javascript"> 
+window.onload=function(){
+var info=document.getElementById("informacion");
+
+var enlaces= document.getElementsByTagName("a");
+info.innerHTML="Numero de enlaces="+enlaces.length;
+
+var parrafos=document.getElementsByTagName("p");
+info.innerHTML=info.innerHTML+"<br/>Numero de´parrafos= "+parrafos.length;
+
+for (var i=0;i<enlaces.length;i++)
+info.innerHTML=info.innerHTML+"<BR/>"+enlaces[i].href;
+//cuantos enlaces existe de http://www.google.com/
+
+var cont;
+cont=0;
+for (var i=0;i<enlaces.length;i++)
+if (enlaces[i].href=="http://www.google.com/" || enlaces[i].href=="http://www.google.com/")
+cont++;
+
+info.innerHTML=info.innerHTML + "<br>" + "Enlaces a http://www.google.com/ " + cont;
+
+// numero de enlaces en el parrafo 2
+enlaces=parrafos[2].getElementsByTagName("a");
+info.innerHTML=info.innerHTML +"<br >" + "Enlaces del parrafo 2 "+ enlaces.length;
+
+// el ultimo enlace de la pagina
+
+for (var i=0;i<enlaces.length;i++)
+info.innerHTML=info.innerHTML+"<BR/>"+"Ultimo enlace es: "+enlaces[i+1].href;
+
+
+}
+
+</script>
+</head>
+<body>
+<div id="informacion" style="border:thin solid silver"></div>
+
+
+ <p> Las tablas mas sencillas de HTML  <A HREF="http://www.google.com/">Visita google</A> se definen con tres etiquetas:"table" para crear la tabla,"tr"
+ para crear cada fila y "td" para crear cada columna.
+Con los Codigos de colores HTML puede establecer el color de fondo del sitio web, el color del texto, 
+de las celdas en las tablas y mucho mas.
+HREF (abreviatura del ingles Hypertext Reference),que contiene el URL o página donde ir <A HREF="http://www.wikipedia.es/">Visita wikipedia</A></p>
+
+ <p>Con los Codigos de colores HTML<A HREF="http://www.html.es/">Visita html</A> puede establecer el color de fondo del sitio web, el color del texto, 
+de las celdas en las tablas y mucho mas<A HREF="http://www.facebook.com/">Visita face</A>.
+HREF (abreviatura del ingles Hypertext Reference),que contiene el URL o página donde ir</p>
+
+<p>La comunicación es el proceso mediante el cual se puede transmitir información <A HREF="http://www.google.com/">Visita google</A> de una entidad a otra, alterando el estado de conocimiento de la entidad receptora. 
+La entidad emisora se considera única, aunque simultáneamente pueden existir diversas entidades emisores transmitiendo la misma información o mensaje. Por otra parte puede haber más de una entidad receptora. En el proceso de comunicación unilateral 
+la entidad emisora no altera su estado de conocimiento, a diferencia<A HREF="http://www.wikipedia2.es/">Visita wikipedia</A> del de las entidades receptoras.</p>
+</body>
+</html>

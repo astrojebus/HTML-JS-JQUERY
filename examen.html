@@ -1,0 +1,122 @@
+<html>
+<head>
+<title> Usando formulario y javascript</title>
+<script type="text/javascript" src="jquery-2.0.3.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#btncalcular").click(function(event){
+var horas=$("#txthorastrabajadas").val();
+var servicio=$("#txtservicio").val();
+var bono=$("#txtbono").val();
+var costo=$("#txtcostoporhora").val();
+var comisariato=$("#txtcomisariato").val();
+var anticipos=$("#txtanticipo").val();
+
+if ((horas<100)||(horas>160))
+{
+$("#txthorastrabajadas").val("INCORRECTO");
+}
+
+if ((servicio<0)||(servicio>20))
+{
+$("#txtservicio").val("INCORRECTO");
+}
+
+
+if (servicio>2){
+bono=servicio*20;
+$("#txtbono").val(bono);
+}
+else
+{
+$("#txtbono").val(0);
+}
+
+var ingresos=((horas*costo)+bono);
+$("#txtingresos").val(ingresos);
+
+var egresos=parseInt(comisariato)+parseInt(anticipos);
+$("#txtegresos").val(egresos);
+
+var liquido=(ingresos-egresos);
+$("#txtliquido").val(liquido);
+
+var b=$("#txtb").val();
+var c=parseInt(a)+parseInt(b);
+
+
+
+}
+
+);
+}
+);
+
+</script>
+
+
+
+</head>
+<body>
+	<form name='frm1'>
+		<table>
+		<tr>
+		<td> Empleado </td>
+			<td> <Input type='text' id='txtempleado' value='' /></td>
+		</tr>
+		<tr>
+		<td> Cargo </td>
+			<td> <Input type='text' id='txtcargo' value='' /></td>
+		</tr>
+		<tr>
+		<td> Horas Trabajadas </td>
+			<td> <Input type='text' id='txthorastrabajadas' value='0' /></td>
+		</tr>
+		<tr>
+		<td> Costo por hora</td>
+			<td> <Input type='text' id='txtcostoporhora' value='0' /></td>
+		</tr>
+		
+		<tr>
+		<td> Años de servicio</td>
+			<td> <Input type='text' id='txtservicio' value='0' /></td>
+		</tr>
+		
+		<tr>
+		<td> Bono años de servicio</td>
+			<td> <Input type='text' id='txtbono' readonly value='0' /></td>
+		</tr>
+		<tr>
+		<td> Comisariato</td>
+			<td> <Input type='text' id='txtcomisariato' value='0' /></td>
+		</tr>
+		
+		<tr>
+		<td> Anticipo</td>
+			<td> <Input type='text' id='txtanticipo' value='0' /></td>
+		</tr>
+		
+		<tr>
+		<td> Ingresos</td>
+			<td> <Input type='text' id='txtingresos' readonly  value='0' /></td>
+		</tr>
+		<tr>
+		<td> Egresos</td>
+			<td> <Input type='text' id='txtegresos' readonly  value='0' /></td>
+		</tr>
+		<tr>
+		<td> Líquido a recibir</td>
+			<td> <Input type='text' id='txtliquido' readonly value='0' /></td>
+		</tr>
+		<tr>
+		
+			<td> <INPUT type='Button' id="btncalcular" value='Calcular'/></td>
+		</tr>
+		<tr>
+		<td> Resultado </td>
+			<td><INPUT type='Reset' id="Limpiar" value='Limpiar'/></td>
+		</tr>
+		</table>
+		</form>
+		</body>
+</html>

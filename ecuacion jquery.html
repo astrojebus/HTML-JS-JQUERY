@@ -1,0 +1,82 @@
+<html>
+<head>
+<title> Ecuacion con jquery</title>
+<script type="text/javascript" src="jquery-2.0.3.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#btncalcular").click(function(event){
+var a=$("#txta").val();
+var b=$("#txtb").val();
+var c=$("#txtc").val();
+
+var x1,raiz,x2;
+raiz=Math.sqrt((b*b)-(4*a*c));
+
+if (a==0){
+$("#txtx1").val("no puede ser 0");
+$("#txtx2").val("no puede ser 0");
+
+}
+
+
+
+x1=(-b-raiz)/(2*a);
+x2=(-b+raiz)/(2*a)*-1;
+
+$("#txtx1").val(x1);
+$("#txtx2").val(x2);
+
+
+
+
+var c=parseInt(a)+parseInt(b);
+
+
+}
+
+);
+}
+);
+
+</script>
+
+
+
+</head>
+<body>
+	<form name='frm1'>
+		<table>
+		<tr>
+		<td> Ingrese a </td>
+			<td> <Input type='text' id='txta' value='0' /></td>
+		</tr>
+		<tr>
+		<td> Ingrese b </td>
+			<td> <Input type='text' id='txtb' value='0' /></td>
+		</tr>
+                <tr>
+		<td> Ingrese c </td>
+			<td> <Input type='text' id='txtc' value='0' /></td>
+		</tr>
+                
+		<tr>
+		<td> X1</td>
+			<td> <Input type='text' id='txtx1' value='0' /></td>
+		</tr>
+                
+                <tr>
+		<td> X2</td>
+			<td> <Input type='text' id='txtx2' value='0' /></td>
+		</tr>
+		
+		<tr>
+		<td> <INPUT type='Button' id="btncalcular" value='Calcular'/></td>
+		</tr>
+		<tr>
+		
+			<td><INPUT type='Reset' id="Limpiar" value='Limpiar'/></td>
+		</tr>
+		</table>
+		</form>
+		</body>
+</html>
